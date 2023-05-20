@@ -10,6 +10,10 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
+    <!--para solo cargar una parte de la página-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="./assets/css/style.css" rel="stylesheet"/>
+
     <title>Gráficos API CMF</title>
 
 </head>
@@ -17,12 +21,34 @@
     <header class="text-bg-dark p-3">
         <h1>Comisión para el Mercado Financiero</h1>
     </header>
-    <main class="mt-3">
-        <h2 class="text-center mt-3">Selecciona tu banco</h2>
-        <nav class="container">
-            <div class="row align-items-stretch text-center col-12" id="banks"></div>
-        </nav>
+    <h2 class="text-center mt-3">Selecciona tu banco</h2>
+    <nav class="container"><!-- onload nav-->
+        <div class="row align-items-stretch text-center col-12" id="banks"></div>
+    </nav>
+    <main class="mt-3" id="main"> 
+        <section class="container col-lg-6 col-md-8 col-sm-10 col-xs-12" id="">
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-primary text-white">Año</span>
+                <select class="form-select" aria-label="Select year" id="selectYear">
+                    <option value="2022" selected>2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                  </select>
+                <button class="btn btn-primary" type="button" id="btnGeneralYear">Seleccionar</button>
+            </div> 
+            <h2 class="text-center" id="titlePage"></h2>        
+        </section> 
+        <!-- SELECCIONAR AÑO DE GENERAL ANUAL-->
+        <input type="text" id="idBank" readonly hidden />
+        <!--<div id="resultados"></div>->
+        <!--<div id="contenido"></div> <!--CARGAR SOLO UNA PARTE-->
+        <!--<section class="container"><canvas id="graph01"></canvas></section>
+        <section class="container"><canvas id="graph02"></canvas></section>-->
+        <section class="container"><canvas id="graph04"></canvas></section>
+        <section class="container"><canvas id="graph03"></canvas></section>
     </main>
+    
     <footer class="text-bg-dark p-3 text-center mt-3">
         <p>&copy; cPanozo 2023</p>
     </footer>
